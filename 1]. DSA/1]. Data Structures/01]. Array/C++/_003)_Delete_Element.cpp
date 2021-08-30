@@ -2,20 +2,29 @@
 #include <cmath>
 using namespace std;
 
+//This function will delete given element
 int deleteEle(int arr[], int n, int x)
 {
 	int i = 0;
+	
+	
 	for(i = 0; i < n; i++)
 	{
+		//If found element then break loop
 		if(arr[i] == x)
 			break;
 	}
 	if(i == n)
 		return n;
+	
+	//Loop will go last value of i from above loop to end of the array
 	for(int j = i; j < n - 1; j++)
 	{
+		//shift all element backward
 		arr[j] = arr[j + 1];
 	}
+	
+	//return new size of array
 	return n-1;
 }
 
